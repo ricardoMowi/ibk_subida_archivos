@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="UTF-8">
+<!-- Bootstrap CSS -->
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+	crossorigin="anonymous">
+
+<title>Archivos</title>
+</head>
+
+<form th:action="@{/cargar}" method="post" enctype="multipart/form-data" style="padding-left: 20px;padding-right: 20px;">
+	<h4
+	style="
+		padding-top: 10px;
+		padding-left: 10px;
+		padding-right: 10px;
+		padding-bottom: 5px;
+	"
+	>Carga de archivos</h4>
+	<div class="form-group row" style="padding-bottom: 10px; margin-left: 0px;">
+		<label class="control-label col-md-3 col-sm-3 col-xs-12">Código de usuario:</label>
+		<div class="col-md-6 col-sm-6 col-xs-12">
+			  <input  type="text" class="form-control col-md-12 col-xs-12" name="user" required>
+		</div>
+	</div>
+	<div class="form-group row" style="padding-bottom: 10px; margin-left: 0px;">
+		<label class="control-label col-md-3 col-sm-3 col-xs-12">Contraseña:</label>
+		<div class="col-md-6 col-sm-6 col-xs-12">
+			  <input  type="password" class="form-control col-md-12 col-xs-12" name="password" required >
+		</div>
+	</div>
+	<div class="form-group row" style="padding-bottom: 20px; margin-left: 0px;">
+		<label class="control-label col-md-3 col-sm-3 col-xs-12">Archivo:</label>
+		<div class="col-md-6 col-sm-6 col-xs-12">
+			  <input  type="file" class="form-control col-md-12 col-xs-12" name="archivos" required>
+		</div>
+	</div>			
+	<div class="modal-footer">
+		 <input type="submit" value="Cargar">
+	</div>				
+	
+</form>
+
+<form th:action="@{/descargar}" method="post" enctype="multipart/form-data" style="padding-left: 20px;padding-right: 20px;">
+	<div  method="post"  class="modal-footer">
+		<input type="submit" value="Descargar archivos de respuesta">
+	</div>	
+</form>
+
+<h3 th:text="${mensaje}" style="text-align: center;"></h3>
+	
+
+  
+
+  
+
+
+
+</html>
